@@ -22,6 +22,7 @@ const styles = {
   greenBtn:
     "w-full text-center py-3 rounded bg-green-600 text-white hover:bg-green-700 focus:outline-none my-1",
   nav_List: "text-gray-600 hover:text-blue-600",
+  container: "container mx-auto",
 };
 
 export default styles;

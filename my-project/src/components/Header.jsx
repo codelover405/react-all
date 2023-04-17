@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import styles from "../styles";
 import { logo } from "../assets/index";
+import { Link, Outlet } from "react-router-dom";
+import { navLinks } from "../constants/index";
 
 const Header = () => {
   const [navbar, setNavbar] = useState(false);
@@ -60,23 +62,19 @@ const Header = () => {
               }`}
             >
               <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
-                <li className={styles.nav_List}>
-                  <a href="javascript:void(0)">Home</a>
-                </li>
-                <li className={styles.nav_List}>
-                  <a href="javascript:void(0)">Blog</a>
-                </li>
-                <li className={styles.nav_List}>
-                  <a href="javascript:void(0)">About US</a>
-                </li>
-                <li className={styles.nav_List}>
-                  <a href="javascript:void(0)">Contact US</a>
-                </li>
+                {navLinks.map((link, index) => {
+                  return (
+                    <li key={link.id} className={styles.nav_List}>
+                      <Link to={link.to}>{link.title}</Link>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           </div>
         </div>
       </nav>
+      <Outlet />
     </div>
   );
 };
