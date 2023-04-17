@@ -12,7 +12,7 @@ const Media = () => {
                 <li className="p-5 ">
                   <a href={e.link}>
                     <span className="outline-orange-500">
-                      <img src={[e.icon]} alt={e.id} />
+                      <img src={e.icon} alt={e.id} />
                     </span>
                   </a>
                 </li>

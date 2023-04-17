@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "../styles";
-import { logo } from "../assets/index";
+import { logo, logo1, cart } from "../assets/index";
 import { Link, Outlet } from "react-router-dom";
 import { navLinks } from "../constants/index";
 
@@ -14,7 +14,7 @@ const Header = () => {
             <div className="flex items-center justify-between py-3 md:py-5 md:block">
               <a href="javascript:void(0)">
                 <h2 className="text-2xl font-bold">
-                  <img src={logo} className="w-10" alt="logo" />
+                  <img src={logo1} className="w-10" alt="logo" />
                 </h2>
               </a>
               <div className="md:hidden">
@@ -36,6 +36,7 @@ const Header = () => {
                       />
                     </svg>
                   ) : (
+                    // close
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="w-6 h-6"
@@ -69,6 +70,10 @@ const Header = () => {
                     </li>
                   );
                 })}
+                <li>
+                  {" "}
+                  <img src={cart} alt="cart" className="w-15 h-15" />{" "}
+                </li>
               </ul>
             </div>
           </div>

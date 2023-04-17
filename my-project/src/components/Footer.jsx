@@ -11,11 +11,13 @@ const Footer = () => {
               <div>
                 <h1 className="font-bold my-2 text-2xl">{link.title}</h1>
                 <ul className="flex">
-                  <li className="">
-                    {link.links.map((e) => {
+                  <li className="" key={index + 2}>
+                    {link.links.map((e, index) => {
                       return (
                         <>
-                          <li className="opacity-50">{e.name}</li>
+                          <li key={index + 1} className="opacity-50">
+                            {e.name}
+                          </li>
                         </>
                       );
                     })}
