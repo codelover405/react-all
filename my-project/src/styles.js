@@ -18,11 +18,18 @@ const styles = {
 
   // ************************ *********************
   // new
-  input: "block border border-grey-light w-full p-3 rounded mb-4",
-  greenBtn:
-    "w-full text-center py-3 rounded bg-green-600 text-white hover:bg-green-700 focus:outline-none my-1",
-  nav_List: "text-gray-600 hover:text-blue-600",
+
   container: "container mx-auto",
+  input: "block border border-grey-light w-full p-3 rounded mb-4",
+  link: "cursor-pointer no-underline",
+  blueBtn:
+    "block w-full rounded border border-blue-600 bg-blue-600 px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-white focus:outline-none focus:ring active:text-opacity-75 sm:w-auto",
+  blueFullBtn:
+    "w-full text-center py-3 rounded bg-blue-600 text-white hover:bg-blue-700 focus:outline-none my-1",
+  blueBtnOutline:
+    "block w-full rounded border border-blue-600 px-12 py-3 text-sm font-medium text-white hover:bg-blue-600 focus:outline-none focus:ring active:bg-blue-500 sm:w-auto",
+  blueGradient:
+    "bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 bg-clip-text text-3xl font-extrabold text-transparent sm:text-5xl",
 };
 
 export default styles;

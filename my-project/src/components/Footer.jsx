@@ -1,5 +1,6 @@
 import React from "react";
 import { footerLinks } from "../constants/index";
+import styles from "../styles";
 
 const Footer = () => {
   return (
@@ -15,7 +16,10 @@ const Footer = () => {
                     {link.links.map((e, index) => {
                       return (
                         <>
-                          <li key={index + 1} className="opacity-50">
+                          <li
+                            key={index}
+                            className={`opacity-50 hover:opacity-70 ${styles.link}`}
+                          >
                             {e.name}
                           </li>
                         </>

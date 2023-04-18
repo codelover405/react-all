@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "../styles";
-import { logo, logo1, cart } from "../assets/index";
+import { logo1, cart } from "../assets/index";
 import { Link, Outlet } from "react-router-dom";
 import { navLinks } from "../constants/index";
 
@@ -12,11 +12,11 @@ const Header = () => {
         <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
           <div>
             <div className="flex items-center justify-between py-3 md:py-5 md:block">
-              <a href="javascript:void(0)">
+              <Link to="/home" className={styles.link}>
                 <h2 className="text-2xl font-bold">
                   <img src={logo1} className="w-10" alt="logo" />
                 </h2>
-              </a>
+              </Link>
               <div className="md:hidden">
                 <button
                   className="p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border"
@@ -65,14 +65,29 @@ const Header = () => {
               <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
                 {navLinks.map((link, index) => {
                   return (
-                    <li key={link.id} className={styles.nav_List}>
-                      <Link to={link.to}>{link.title}</Link>
+                    <li
+                      key={link.id}
+                      className={`${styles.nav_List} ${styles.link} bg-blue-600 p-2 rounded-md text-white`}
+                    >
+                      <Link to={link.to} className="">
+                        {link.title}
+                      </Link>
                     </li>
                   );
                 })}
+                <li
+                  className={`${styles.link} ${styles.nav_List} font-bold text-blue-600`}
+                >
+                  {""}
+                  UserName
+                </li>
                 <li>
                   {" "}
-                  <img src={cart} alt="cart" className="w-15 h-15" />{" "}
+                  <img
+                    src={cart}
+                    alt="cart"
+                    className={`${styles.link} w-15 h-15`}
+                  />{" "}
                 </li>
               </ul>
             </div>

@@ -29,23 +29,23 @@ export const footerLinks = [
     links: [
       {
         name: "Content",
-        link: "https://www.hoobank.com/content/",
+        link: "/home",
       },
       {
         name: "How it Works",
-        link: "https://www.hoobank.com/how-it-works/",
+        link: "/home",
       },
       {
         name: "Create",
-        link: "https://www.hoobank.com/create/",
+        link: "/home",
       },
       {
         name: "Explore",
-        link: "https://www.hoobank.com/explore/",
+        link: "/home",
       },
       {
         name: "Terms & Services",
-        link: "https://www.hoobank.com/terms-and-services/",
+        link: "/home",
       },
     ],
   },
@@ -54,23 +54,23 @@ export const footerLinks = [
     links: [
       {
         name: "Help Center",
-        link: "https://www.hoobank.com/help-center/",
+        link: "/",
       },
       {
         name: "Partners",
-        link: "https://www.hoobank.com/partners/",
+        link: "/",
       },
       {
         name: "Suggestions",
-        link: "https://www.hoobank.com/suggestions/",
+        link: "/",
       },
       {
         name: "Blog",
-        link: "https://www.hoobank.com/blog/",
+        link: "/",
       },
       {
         name: "Newsletters",
-        link: "https://www.hoobank.com/newsletters/",
+        link: "/",
       },
     ],
   },
@@ -79,11 +79,28 @@ export const footerLinks = [
     links: [
       {
         name: "Our Partner",
-        link: "https://www.hoobank.com/our-partner/",
+        link: "/",
       },
       {
         name: "Become a Partner",
-        link: "https://www.hoobank.com/become-a-partner/",
+        link: "/",
+      },
+    ],
+  },
+  {
+    title: "Company",
+    links: [
+      {
+        name: "About Company",
+        link: "/",
+      },
+      {
+        name: "Profit",
+        link: "/",
+      },
+      {
+        name: "Become a Partner",
+        link: "/",
       },
     ],
   },

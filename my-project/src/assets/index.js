@@ -9,6 +9,9 @@ import nav_menu from "./nav_menu.svg";
 import nav_close from "./nav_close.svg";
 import logo1 from "./logo.svg";
 import cart from "./cart.svg";
+import one from "./1.jpg";
+import two from "./2.jpg";
+import three from "./3.jpg";
 
 export {
   facebook,
@@ -22,4 +25,7 @@ export {
   nav_menu,
   logo1,
   cart,
+  one,
+  two,
+  three,
 };
