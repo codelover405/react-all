@@ -12,6 +12,7 @@ import cart from "./cart.svg";
 import one from "./1.jpg";
 import two from "./2.jpg";
 import three from "./3.jpg";
+import userAvatar from "./userAvatar.svg";
 
 export {
   facebook,
@@ -28,4 +29,5 @@ export {
   one,
   two,
   three,
+  userAvatar,
 };

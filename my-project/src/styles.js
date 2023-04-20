@@ -20,7 +20,7 @@ const styles = {
   // new
 
   container: "container mx-auto",
-  input: "block border border-grey-light w-full p-3 rounded mb-4",
+  input: "block border border-grey-light w-full p-3 rounded mb-2",
   link: "cursor-pointer no-underline",
   blueBtn:
     "block w-full rounded border border-blue-600 bg-blue-600 px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-white focus:outline-none focus:ring active:text-opacity-75 sm:w-auto",
@@ -30,6 +30,8 @@ const styles = {
     "block w-full rounded border border-blue-600 px-12 py-3 text-sm font-medium text-white hover:bg-blue-600 focus:outline-none focus:ring active:bg-blue-500 sm:w-auto",
   blueGradient:
     "bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 bg-clip-text text-3xl font-extrabold text-transparent sm:text-5xl",
+
+  inputError: "text-red-500 text-sm",
 };
 
 export default styles;

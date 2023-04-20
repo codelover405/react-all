@@ -9,6 +9,8 @@ import Page404 from "./404Page";
 import HomePage from "./HomePage";
 import About from "./About";
 import Layout from "./layout";
+import Card from "./card/Card";
+import Avatar from "./small/avatar";
 
 export {
   Header,
@@ -22,4 +24,6 @@ export {
   HomePage,
   About,
   Layout,
+  Card,
+  Avatar,
 };

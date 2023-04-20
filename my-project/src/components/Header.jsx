@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import styles from "../styles";
 import { logo1, cart } from "../assets/index";
-import { Link, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet } from "react-router-dom";
 import { navLinks } from "../constants/index";
+import Avatar from "./small/avatar";
 
 const Header = () => {
   const [navbar, setNavbar] = useState(false);
@@ -67,17 +68,27 @@ const Header = () => {
                   return (
                     <li
                       key={link.id}
-                      className={`${styles.nav_List} ${styles.link} bg-blue-600 p-2 rounded-md text-white`}
+                      className={`${styles.nav_List} ${styles.link} `}
                     >
-                      <Link to={link.to} className="">
+                      <NavLink
+                        to={link.to}
+                        className=""
+                        style={({ isActive }) => ({
+                          color: isActive ? "blue" : "black",
+                        })}
+                      >
                         {link.title}
-                      </Link>
+                      </NavLink>
                     </li>
                   );
                 })}
                 <li
                   className={`${styles.link} ${styles.nav_List} font-bold text-blue-600`}
                 >
+                  <Avatar
+                    className="object-cover"
+                    classAdd={"flex justify-center"}
+                  />
                   {""}
                   UserName
                 </li>

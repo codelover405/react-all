@@ -1,4 +1,8 @@
 import React, { Component } from "react";
+import axios from "axios";
+import { Link } from "react-router-dom";
+import styles from "../../styles";
+import { useNavigate } from "react-router-dom";
 
 class Raff extends Component {
   constructor() {
@@ -9,6 +13,7 @@ class Raff extends Component {
         email: "",
         password: "",
         confirmPassword: "",
+        redirect: false,
       },
       formErrors: {
         name: null,
@@ -111,6 +116,7 @@ class Raff extends Component {
   };
 
   handleSubmit = async () => {
+    let Navigate = useNavigate();
     const { form, formErrors } = this.state;
     const errorObj = this.validateForm(form, formErrors, this.validateField);
     if (Object.keys(errorObj).length !== 0) {
@@ -119,16 +125,28 @@ class Raff extends Component {
     }
     console.log("Data: ", form);
 
+    try {
+      const response = await axios.post(
+        "http://localhost:5000/api/signup",
+        form
+      );
+      console.log("form", response.data);
+      localStorage.setItem("form", JSON.stringify(response.data));
+      Navigate("/login");
+    } catch (error) {
+      console.error(error);
+    }
+
     // postData = async () => {
-    const response = await fetch("http://localhost:5000/api/signup", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(form),
-    });
-    const json = await response.json();
-    console.log(json);
+    // const response = await fetch("http://localhost:5000/api/signup", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify(form),
+    // });
+    // const json = await response.json();
+    // console.log(json);
     // };
   };
 
@@ -136,7 +154,7 @@ class Raff extends Component {
     const { form, formErrors } = this.state;
     return (
       <>
-        <div className="signup-box">
+        {/* <div className="signup-box">
           <p className="title">Sign up</p>
           <div className="row">
             <div className="col-md-6">
@@ -222,7 +240,107 @@ class Raff extends Component {
           >
             Here is the step by step explanation of form validation in React JS
           </a>
-        </h3>
+        </h3> */}
+
+        {/*  */}
+        <div className="bg-grey-lighter min-h-screen flex flex-col ">
+          <div className="container  max-w-lg mx-auto flex-1 flex flex-col items-center justify-center px-2">
+            <div className="bg-white px-6 py-8 rounded shadow-md text-black w-full">
+              <h1 className="mb-8 text-3xl text-center">Sign up</h1>
+              <input
+                type="text"
+                className={styles.input}
+                name="name"
+                placeholder="Full Name"
+                value={form.name}
+                onChange={this.handleChange}
+                onBlur={this.handleChange}
+              />
+              {formErrors.name && (
+                <span className={`${styles.inputError}`}>
+                  {formErrors.name}
+                </span>
+              )}
+              <input
+                type="text"
+                className={styles.input}
+                name="email"
+                value={form.email}
+                onChange={this.handleChange}
+                onBlur={this.handleChange}
+                placeholder="Email"
+              />
+              {formErrors.email && (
+                <span className={`${styles.inputError}`}>
+                  {formErrors.email}
+                </span>
+              )}
+              <input
+                type="password"
+                className={styles.input}
+                value={form.password}
+                onChange={this.handleChange}
+                onBlur={this.handleChange}
+                name="password"
+                placeholder="Password"
+              />
+              {formErrors.password && (
+                <span className={`${styles.inputError}`}>
+                  {formErrors.password}
+                </span>
+              )}
+              <input
+                type="password"
+                className={styles.input}
+                name="confirmPassword"
+                value={form.confirmPassword}
+                onChange={this.handleChange}
+                onBlur={this.handleChange}
+                placeholder="Confirm Password"
+              />
+              {formErrors.confirmPassword && (
+                <span className={`${styles.inputError}`}>
+                  {formErrors.confirmPassword}
+                </span>
+              )}
+              <button
+                type="submit"
+                onClick={this.handleSubmit}
+                className={styles.blueFullBtn}
+                value="Create Account"
+              />
+
+              <div className="text-center text-sm mt-4">
+                By signing up, you agree to the
+                <a className="no-underline border-b" href="#">
+                  Terms of Service
+                </a>{" "}
+                and
+                <a className="no-underline border-b" href="#">
+                  Privacy Policy
+                </a>
+              </div>
+            </div>
+
+            <div className=" mt-6">
+              Already have an account?
+              {/* <a
+              className="no-underline border-b border-blue text-blue"
+              href="../login/"
+            >
+              Log in
+            </a> */}
+              <Link
+                className="no-underline border-b border-blue text-blue text-b font-semibold ml-2"
+                to="/login"
+              >
+                Log in
+              </Link>
+              .
+            </div>
+          </div>
+        </div>
+        {/* </div> */}
       </>
     );
   }

@@ -9,9 +9,12 @@ import {
   Login,
   Layout,
 } from "./components/index";
-import Apps from "./components/test";
-import Forms from "./components/test2";
-import Test3 from "./components/test3";
+import Forms from "./components/test/test2";
+// import Product from "./components/product";
+import Raff from "./components/test/test";
+import Test3 from "./components/test/test3";
+import Card from "./components/card/Card";
+import Signup2 from "./components/test/test4";
 
 // const Layout = ({ children }) => {
 //   return (
@@ -26,26 +29,15 @@ import Test3 from "./components/test3";
 function App() {
   return (
     <div>
-      {/* <Routes>
-        <Route path="/" element={<Signup />} />
-        <Route path="/login" element={<Login />} />
-        <Route exact path="/home" element={<Layout />} />
-        <Route path="*" element={<Page404 />} />
-        <Route path="/about" element={<About />} />
-
-        <Route element={<Layout />}>
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/login" element={<Login />} />
-        </Route>
-      </Routes> */}
       <Routes>
         <Route path="/" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="*" element={<Page404 />} />
 
-        <Route path="/raff" element={<Apps />} />
-        <Route path="/form" element={<Forms />} />
-        <Route path="/test" element={<Test3 />} />
+        <Route path="/forms" element={<Forms />} />
+        <Route path="/form" element={<Raff />} />
+        <Route path="/test3" element={<Test3 />} />
+        <Route path="/test4" element={<Signup2 />} />
         <Route
           path="/home"
           element={
@@ -60,6 +52,15 @@ function App() {
           element={
             <Layout>
               <About />
+            </Layout>
+          }
+        />
+        <Route
+          path="/product"
+          element={
+            <Layout>
+              {/* <Product /> */}
+              <Card />
             </Layout>
           }
         />

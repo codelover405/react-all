@@ -21,6 +21,16 @@ export const navLinks = [
     title: "Clients",
     to: "/clients",
   },
+  {
+    id: "signup",
+    title: "Sign Up",
+    to: "/",
+  },
+  {
+    id: "login",
+    title: "Log In",
+    to: "/login",
+  },
 ];
 
 export const footerLinks = [
@@ -126,5 +136,53 @@ export const socialMedia = [
     id: "social-media-4",
     icon: linkedin,
     link: "https://www.linkedin.com/",
+  },
+];
+
+export const product = [
+  {
+    id: 1,
+    background: "bg-six ",
+    desc: {
+      date: "20 March 2014",
+      user: "User Name",
+      title: "Boost Your conversion rate",
+    },
+  },
+  {
+    id: 2,
+    background: "bg-two",
+    desc: {
+      date: "25 March 2018",
+      user: "User Name",
+      title: "Boost Your conversion rate1",
+    },
+  },
+  {
+    id: 3,
+    background: "bg-three",
+    desc: {
+      date: "02 March 2015",
+      user: "User Name",
+      title: "Boost Your conversion rate2",
+    },
+  },
+  {
+    id: 4,
+    background: "bg-four",
+    desc: {
+      date: "20 March 2016",
+      user: "User Name",
+      title: "Boost Your conversion rate3",
+    },
+  },
+  {
+    id: 5,
+    background: "bg-five",
+    desc: {
+      date: "06 March 2001",
+      user: "User Name",
+      title: "Boost Your conversion rate4",
+    },
   },
 ];

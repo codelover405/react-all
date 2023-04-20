@@ -2,18 +2,14 @@ import React, { useState } from "react";
 import styles from "../../styles";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
 
 const Login = ({}) => {
-  const navigate = useNavigate();
   const [form, setForm] = useState([
     {
       email: "",
       password: "",
     },
   ]);
-
-  const [userName, setUserName] = useState();
 
   const onLogin = async (e) => {
     e.preventDefault();
@@ -29,10 +25,8 @@ const Login = ({}) => {
         form,
         config
       );
-      console.log("response login", response.data.name);
-      setUserName(response.data.name);
+      console.log("response login", response.data);
       localStorage.setItem("form-login", JSON.stringify(response.data));
-      navigate("/home");
     } catch (error) {
       console.log("login error", error);
     }

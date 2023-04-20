@@ -18,7 +18,7 @@ const Hero = () => {
               illo tenetur fuga ducimus numquam ea!
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
-              <Link className={styles.blueBtn} href="/">
+              <Link to="/about" className={styles.blueBtn} href="/">
                 Get Started
               </Link>
               <Link className={styles.blueBtnOutline} href="/about">
