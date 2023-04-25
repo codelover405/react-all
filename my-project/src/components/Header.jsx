@@ -4,9 +4,14 @@ import { logo1, cart } from "../assets/index";
 import { Link, NavLink, Outlet } from "react-router-dom";
 import { navLinks } from "../constants/index";
 import Avatar from "./small/avatar";
+import IconButton from "@mui/material/IconButton";
+import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
+import axios from "axios";
 
 const Header = () => {
   const [navbar, setNavbar] = useState(false);
+
+  // const axois = axios.get("http://localhost:5000/api/signup");
   return (
     <div>
       <nav className="w-full bg-white shadow">
@@ -72,7 +77,6 @@ const Header = () => {
                     >
                       <NavLink
                         to={link.to}
-                        className=""
                         style={({ isActive }) => ({
                           color: isActive ? "blue" : "black",
                         })}
@@ -86,19 +90,22 @@ const Header = () => {
                   className={`${styles.link} ${styles.nav_List} font-bold text-blue-600`}
                 >
                   <Avatar
-                    className="object-cover"
-                    classAdd={"flex justify-center"}
+                    className="object-cover "
+                    classAdd={"md:flex justify-center hidden"}
                   />
                   {""}
                   UserName
                 </li>
                 <li>
                   {" "}
-                  <img
+                  {/* <img
                     src={cart}
                     alt="cart"
                     className={`${styles.link} w-15 h-15`}
-                  />{" "}
+                  />{" "} */}
+                  <IconButton color="primary" aria-label="add to shopping cart">
+                    <AddShoppingCartIcon />
+                  </IconButton>
                 </li>
               </ul>
             </div>

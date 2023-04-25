@@ -18,6 +18,10 @@ const About = () => {
           ex inventore, architecto porro.
         </p>
       </section>
+      {/* <button className="btn-primary hover:banana">Lorem</button>
+      <button className="btn-grey">Lorem</button>
+
+      <h1 className="text-green-600">Hello</h1> */}
     </div>
   );
 };

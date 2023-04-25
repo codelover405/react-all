@@ -3,6 +3,14 @@ import styles from "../../styles";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import Stack from "@mui/material/Stack";
+import Snackbar from "@mui/material/Snackbar";
+import MuiAlert from "@mui/material/Alert";
+import SnackBars from "../small/snackbars";
+
+const Alert = React.forwardRef(function Alert(props, ref) {
+  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
 
 const Login = ({}) => {
   const navigate = useNavigate();
@@ -13,12 +21,26 @@ const Login = ({}) => {
     },
   ]);
 
-  const [userName, setUserName] = useState();
+  const [error, setError] = useState(false);
+  const [logedin, setLogedin] = useState(false);
+  const [open, setOpen] = React.useState(false);
+  const handleClick = () => {
+    setOpen(true);
+  };
+
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+    setOpen(false);
+  };
 
   const onLogin = async (e) => {
     e.preventDefault();
-
     try {
+      // if (!form) {
+      //   setError(true);
+      // }
       const config = {
         Headers: {
           "Content-Type": "application/json",
@@ -30,11 +52,14 @@ const Login = ({}) => {
         config
       );
       console.log("response login", response.data.name);
-      setUserName(response.data.name);
       localStorage.setItem("form-login", JSON.stringify(response.data));
-      navigate("/home");
-    } catch (error) {
-      console.log("login error", error);
+      setLogedin(true);
+      setTimeout(() => {
+        navigate("/home");
+      }, 2000);
+    } catch (err) {
+      console.log("login error", err);
+      setError(true);
     }
   };
   const handleChanges = (e) => {
@@ -42,6 +67,33 @@ const Login = ({}) => {
   };
   return (
     <div>
+      {error && (
+        <Stack spacing={2} sx={{ width: "100%" }}>
+          <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+            <Alert
+              onClose={handleClose}
+              severity="error"
+              sx={{ width: "100%" }}
+            >
+              Please Fill The All the Field and Enter Valid Email!
+            </Alert>
+          </Snackbar>
+        </Stack>
+      )}
+      {logedin && (
+        <Stack spacing={2} sx={{ width: "100%" }}>
+          <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+            <Alert
+              onClose={handleClose}
+              severity="success"
+              sx={{ width: "100%" }}
+            >
+              User Log in
+            </Alert>
+          </Snackbar>
+        </Stack>
+      )}
+
       <div className="bg-grey-lighter min-h-screen flex flex-col ">
         <div className="container  max-w-lg mx-auto flex-1 flex flex-col items-center justify-center px-2">
           <div className="bg-white px-6 py-8 rounded shadow-md text-black w-full">
@@ -63,7 +115,11 @@ const Login = ({}) => {
                 name="password"
                 placeholder="Password"
               />
-              <button type="submit" className={styles.blueFullBtn}>
+              <button
+                type="submit"
+                onClick={handleClick}
+                className={styles.blueFullBtn}
+              >
                 Login
               </button>
             </form>

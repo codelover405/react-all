@@ -13,10 +13,13 @@ const Signup2 = () => {
     cpassword: "",
   });
 
+  const [error, setError] = useState(false);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!name || !email || !password || !cpassword) {
       console.log("Please Fill all the Fields");
+      setError("place all the fields.....");
     }
     try {
       const response = await axios.post(

@@ -18,10 +18,10 @@ const Hero = () => {
               illo tenetur fuga ducimus numquam ea!
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
-              <Link to="/about" className={styles.blueBtn} href="/">
+              <Link to="/admin" className={styles.blueBtn} href="/">
                 Get Started
               </Link>
-              <Link className={styles.blueBtnOutline} href="/about">
+              <Link className={styles.blueBtnOutline} href="#">
                 Learn More
               </Link>
             </div>

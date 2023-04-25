@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import styles from "../../styles";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 class Signup extends Component {
   constructor() {
     super();
@@ -129,7 +129,8 @@ class Signup extends Component {
       );
       console.log("data", response.data);
       localStorage.setItem("form", JSON.stringify(response));
-      navigate("/login");
+      // this.props.navigate("/login");
+      // this.props.history.push("/home")
     } catch (error) {
       console.error(error);
     }
@@ -217,7 +218,6 @@ class Signup extends Component {
                 className={styles.blueFullBtn}
                 value="Create Account"
               />
-
               <div className="text-center text-sm mt-4">
                 By signing up, you agree to the
                 <a className="no-underline border-b" href="#">
@@ -239,7 +239,7 @@ class Signup extends Component {
               Log in
             </a> */}
               <Link
-                className="no-underline border-b border-blue text-blue text-b font-semibold ml-2"
+                className="no-underline border-b border text-text-b font-semibold ml-2"
                 to="/login"
               >
                 Log in

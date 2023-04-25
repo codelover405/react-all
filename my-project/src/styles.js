@@ -32,6 +32,9 @@ const styles = {
     "bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 bg-clip-text text-3xl font-extrabold text-transparent sm:text-5xl",
 
   inputError: "text-red-500 text-sm",
+
+  adminContent:
+    "px-8 border-dashed border-2 border-indigo-600 rounded-md mx-4 h-screen",
 };
 
 export default styles;

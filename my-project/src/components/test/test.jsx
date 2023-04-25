@@ -331,7 +331,7 @@ class Raff extends Component {
               Log in
             </a> */}
               <Link
-                className="no-underline border-b border-blue text-blue text-b font-semibold ml-2"
+                className="no-underline border-b border-blue400 text-blue-400 text-b font-semibold ml-2"
                 to="/login"
               >
                 Log in

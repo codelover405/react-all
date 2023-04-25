@@ -1,12 +1,13 @@
 import React from "react";
 import { footerLinks } from "../constants/index";
 import styles from "../styles";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
     <div>
-      <footer className="w-full grid md:grid-cols-4 sm:grid-cols-2 bg-slate-800 text-white px-5 py-10">
-        {footerLinks.map((link, index) => {
+      <footer className="w-full grid md:grid-cols-3 lg:grid-cols-4 sm:grid-cols-2 bg-slate-800 text-white px-5 py-10">
+        {footerLinks?.map((link, index) => {
           return (
             <>
               <div>
