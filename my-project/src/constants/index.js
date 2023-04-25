@@ -295,3 +295,36 @@ export const bands = [
     formed_in: 1987,
   },
 ];
+
+export const adminLink = [
+  {
+    id: "Dashboard",
+    title: "Dashboard",
+    to: "/admin/dashboard",
+  },
+  {
+    id: "Team",
+    title: "Team",
+    to: "/admin/team",
+  },
+  {
+    id: "Projects",
+    title: "Projects",
+    to: "/admin/projects",
+  },
+  {
+    id: "Calendar",
+    title: "Calendar",
+    to: "/admin/calendar",
+  },
+  {
+    id: "Documents",
+    title: "Documents",
+    to: "/admin/documents",
+  },
+  {
+    id: "Reports",
+    title: "Reports",
+    to: "/admin/reports",
+  },
+];

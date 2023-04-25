@@ -16,6 +16,7 @@ import NotificationsIcon from "@mui/icons-material/Notifications";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import { Avatar } from "@mui/material";
 import { Link } from "react-router-dom";
+import { adminLink } from "../../constants/index";
 
 const Topbar = () => {
   const [state, setState] = React.useState({ left: false });
@@ -30,39 +31,6 @@ const Topbar = () => {
 
     setState({ ...state, [anchor]: open });
   };
-
-  const adminLink = [
-    {
-      id: "Dashboard",
-      title: "Dashboard",
-      to: "/admin/dashboard",
-    },
-    {
-      id: "Team",
-      title: "Team",
-      to: "/admin/team",
-    },
-    {
-      id: "Projects",
-      title: "Projects",
-      to: "/admin/projects",
-    },
-    {
-      id: "Calendar",
-      title: "Calendar",
-      to: "/admin/calendar",
-    },
-    {
-      id: "Documents",
-      title: "Documents",
-      to: "/admin/documents",
-    },
-    {
-      id: "Reports",
-      title: "Reports",
-      to: "/admin/reports",
-    },
-  ];
 
   const list = (anchor) => (
     <Box
@@ -88,7 +56,7 @@ const Topbar = () => {
       </List>
       <Divider />
       <List>
-        {["All mail", "Trash", "Spam"].map((text, index) => (
+        {/* {["All mail", "Trash", "Spam"].map((text, index) => (
           <ListItem key={text} disablePadding>
             <ListItemButton>
               <ListItemIcon>
@@ -97,7 +65,7 @@ const Topbar = () => {
               <ListItemText primary={text} />
             </ListItemButton>
           </ListItem>
-        ))}
+        ))} */}
       </List>
     </Box>
   );

@@ -3,7 +3,7 @@ import styles from "../../styles";
 import Blank from "./pages/blank";
 import Topbar from "./Topbar";
 
-const AdminHeader = () => {
+const AdminContent = () => {
   return (
     <div>
       <Topbar />
@@ -102,4 +102,4 @@ const AdminHeader = () => {
   );
 };
 
-export default AdminHeader;
+export default AdminContent;

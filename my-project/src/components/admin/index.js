@@ -1,4 +1,4 @@
-import AdminHeader from "./adminHeader";
+import AdminContent from "./AdminContent";
 import Side from "./side";
 import AdminLayout from "./layout";
 import Documents from "./pages/Documents";
@@ -9,7 +9,7 @@ import Reports from "./pages/Reports";
 import Topbar from "./Topbar";
 
 export {
-  AdminHeader,
+  AdminContent,
   AdminLayout,
   Side,
   Documents,
