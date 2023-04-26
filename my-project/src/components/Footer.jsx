@@ -13,7 +13,7 @@ const Footer = () => {
               <div>
                 <h1 className="font-bold my-2 text-2xl">{link.title}</h1>
                 <ul className="flex">
-                  <li className="" key={index + 2}>
+                  <li className="" key={index}>
                     {link.links.map((e, index) => {
                       return (
                         <>

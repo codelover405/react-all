@@ -1,12 +1,9 @@
 import React from "react";
-import { AdminContent, Topbar, Side } from "./index";
+import { AdminContent, Side } from "./index";
 
 const AdminLayout = () => {
   return (
     <div>
-      {/* <div className="lg:block hidden sticky top-0">
-        <Topbar />
-      </div> */}
       <div className="w-full flex divide-x-2">
         <div className="lg:block hidden lg:w-1/5 w-full ">
           <Side />

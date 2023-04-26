@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./App.css";
-import { Route, Router, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import {
   Page404,
   HomePage,
@@ -25,12 +25,7 @@ import Filter from "./components/test/Filter";
 import Car from "./components/test/Car";
 // import { Side, AdminHeader } from "./components/admin/index";
 import AdminLayout from "./components/admin/layout";
-import Blank from "./components/admin/pages/blank";
-import Team from "./components/admin/pages/Team";
-import Projects from "./components/admin/pages/Projects";
-import Calendar from "./components/admin/pages/Calendar";
-import Documents from "./components/admin/pages/Documents";
-import Reports from "./components/admin/pages/Reports";
+import { AdminContent } from "./components/admin";
 
 // const Layout = ({ children }) => {
 //   return (
@@ -59,8 +54,7 @@ function App() {
           path="/home"
           element={
             <Layout>
-              {" "}
-              <HomePage />{" "}
+              <HomePage />
             </Layout>
           }
         />
@@ -118,14 +112,18 @@ function App() {
         />
 
         {/* sidebar */}
-        <Route path="/admin" element={<AdminLayout />}>
-          {/* <Route path="/admin/dashboard" element={<Blank />} /> */}
-          <Route path="/admin/team" element={<Team />} />
-          <Route path="/admin/projects" element={<Projects />} />
-          <Route path="/admin/calendar" element={<Calendar />} />
-          <Route path="/admin/documents" element={<Documents />} />
-          <Route path="/admin/reports" element={<Reports />} />
-        </Route>
+        {/* <Route path="/admin" element={<AdminLayout />}>
+          <Route path="/admin/:id" element={<AdminContent />} />
+        </Route> */}
+
+        <Route
+          path="/admin/:id"
+          element={
+            <AdminLayout>
+              <AdminContent />
+            </AdminLayout>
+          }
+        />
       </Routes>
     </div>
   );

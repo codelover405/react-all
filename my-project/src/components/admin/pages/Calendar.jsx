@@ -1,12 +1,15 @@
 import React from "react";
-import styles from "../../../styles";
 
 const Calendar = () => {
   return (
-    <div className="flex flex-row">
-      <div className="lg:w-4/5 w-screen">
-        <div className={styles.adminContent}>Calendar</div>
-      </div>
+    <div className="">
+      <div className="">Calendar</div>
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa fuga
+        voluptatum porro ut, blanditiis excepturi, aspernatur, tempore quas
+        quibusdam dolore id minus exercitationem perferendis neque! Repudiandae
+        rerum non enim eligendi.
+      </p>
     </div>
   );
 };

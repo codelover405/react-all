@@ -15,7 +15,9 @@ const Side = () => {
               style={({ isActive }) => ({
                 color: isActive ? "red" : "white",
               })}
-              className=""
+              className={({ isActive }) => ({
+                color: isActive,
+              })}
             >
               {" "}
               {e.title}

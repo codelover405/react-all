@@ -72,8 +72,8 @@ const Topbar = () => {
 
   return (
     <div>
-      <div className="border-2 bg-dark-200 divide-y-2 shadow-lg bg-white ">
-        <div className="flex flex-row ">
+      <div className="border-2 bg-dark-200 divide-y-2 shadow-lg bg-white">
+        <div className="flex flex-row items-center">
           <div className="lg:hidden block">
             {["left"].map((anchor) => (
               <React.Fragment key={anchor}>
@@ -90,7 +90,6 @@ const Topbar = () => {
           </div>
 
           {/*  */}
-          <br className="" />
           <div className="relative w-full flex items-center">
             <div className="absolute inset-y-0 px-2 pointer-events-none flex items-center">
               <SearchIcon />
@@ -98,7 +97,7 @@ const Topbar = () => {
             <input
               type="text"
               //   style={{ border: "2px solid red" }}
-              className="block border-none w-full px-9 py-3 rounded-md"
+              className="border-none w-full px-9 py-3 rounded-md"
               placeholder="Search..."
             />
             <div className="divide-x-2">
